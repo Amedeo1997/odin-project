@@ -1,77 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <h2 id="logo">Header logo</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>Seeds &amp Fruits - Landing Page</title>
+    <meta name="title" content="Seeds &amp Fruits - Landing Page" />
+    <meta name="description" content="Landing Page" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://elbhiruni.github.io/odin-landing-page/"
+    />
+    <meta property="og:title" content="Seeds &amp Fruits - Landing Page" />
+    <meta property="og:description" content="Landing Page" />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/elbhiruni/odin-landing-page/main/images/summary_large_image.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://elbhiruni.github.io/odin-landing-page/"
+    />
+    <meta property="twitter:title" content="Seeds &amp Fruits - Landing Page" />
+    <meta property="twitter:description" content="Landing Page" />
+    <meta
+      property="twitter:image"
+      content="https://raw.githubusercontent.com/elbhiruni/odin-landing-page/main/images/summary_large_image.png"
+    />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- style -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-nav flex container">
+        <div class="header-nav-logo">Hello World</div>
         <nav>
-            <ul>
-                <li><a href="#">header link one</a></li>
-                <li><a href="#">header link two</a></li>
-                <li><a href="#">header link three</a></li>
-            </ul>
+          <ul class="flex">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
         </nav>
+      </div>
+      <div class="header-hero flex container">
+        <div class="header-hero-title flex">
+          <h1>This website is awesome</h1>
+          <p>
+            This website has some subtext that goes here under the main title.
+            It's smaller font and the color is lower contrast.
+          </p>
+          <button type="button" class="btn">Sign up</button>
+        </div>
+        <div class="header-hero-image">
+          <img src="images/pexels-viktor-smith-1393382.jpg" alt="Seeds" />
+        </div>
+      </div>
     </header>
-    <main>
-        <div>
-        <h1>This website is awesome</h1>
-        <p>This website has some subtext that goes here under the main title.
-            it's a smaller font and the color is lower contrast</p>
-        <button>Sign up</button>
-        </div>
-        <div>
-            <img src="https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg" alt="placeholder image">
-        </div>    
-    </main>
-    <section>
+    <main class="main">
+      <section class="main-info container">
         <h2>Some random information</h2>
-        <div>
-            <div class="row">
-                <img src="https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg" alt="placeholder image">
-                <p>this is some text under an illustration or image</p>
+        <div class="main-info-cards flex">
+          <figure class="card flex">
+            <div class="card-image">
+              <img
+                src="images/pexels-polina-tankilevitch-4110253.jpg"
+                alt="Brown Rice"
+              />
             </div>
-            <div class="row">
-                <img src="https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg" alt="placeholder image">
-                <p>this is some text under an illustration or image</p>
+            <figcaption>Brown Rice</figcaption>
+          </figure>
+          <figure class="card flex">
+            <div class="card-image">
+              <img src="images/dates-g28b618447_640.jpg" alt="Date Fruit" />
             </div>
-            <div class="row">
-                <img src="https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg" alt="placeholder image">
-                <p>this is some text under an illustration or image</p>
+            <figcaption>Date Fruit</figcaption>
+          </figure>
+          <figure class="card flex">
+            <div class="card-image">
+              <img src="images/lemons-ga73159156_640.jpg" alt="Lemon" />
             </div>
-            <div class="row">
-                <img src="https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg" alt="placeholder image">
-                <p>this is some text under an illustration or image</p>
+            <figcaption>Lemon</figcaption>
+          </figure>
+          <figure class="card flex">
+            <div class="card-image">
+              <img src="images/pexels-veeterzy-70862.jpg" alt="Blueberry" />
             </div>
+            <figcaption>Blueberry</figcaption>
+          </figure>
         </div>
-    </section>
-    <section>
-        <blockquote>This is an inspiring quote, or a testimonial from a customer.
-            Maybe it's just filling up space, or maybe people will actually read it. Who knows?
-            All I know is that it looks nice.
-        </blockquote>
-        <cite>-Thor, God of Thunder</cite>
-    </section>
-    <section>
-        <div>
-            <div>
-                <h2>Call to action! It's time!</h2>
-                <p>Sign up for our product by clicking that button right over there</p>
-            </div>
-            <div>
-                <button>Sign up</button>
-            </div>
+      </section>
+      <div class="main-quotation container">
+        <p>
+          <em
+            ><q>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut dolore nesciunt, placeat eius praesentium laborum aliquid est quos et quia exercitationem, maxime earum esse debitis reiciendis ea saepe in suscipit.</q
+            ></em
+          >
+        </p>
+        <p>Loremetor</p>
+      </div>
+      <div class="main-action container">
+        <div class="main-action-card flex">
+          <div class="left">
+            <h2>Call to action! It's time!</h2>
+            <p>
+              Sign up for out product by clicking that button right over there
+            </p>
+          </div>
+          <div class="right">
+            <button type="button" class="btn">Sign up</button>
+          </div>
         </div>
-    </section>
-    <footer>
-        <p>Copyright © Amedeo 2024</p>
-    </footer>  
-</body>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>
+        Lesson by
+        <a
+          href="https://www.theodinproject.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >The Odin Project</a
+        >. Coded by
+        <a
+          href="https://github.com/amedeo1997"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Amedeo1997 <i class="fa fa-github" aria-hidden="true"></i
+        ></a>
+      </p>
+    </footer>
+  </body>
 </html>

@@ -1,49 +1,336 @@
-body {
-    margin: 0px;
-    padding: 0px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/*General Settings */
-
-/*Hero Section*/
-header, main, footer {
-    background-color: #1F2937;
-}
-
-main h1 {
-    font-size: 48px;
-    color: #F9FAF8;
-    font-weight: 900;
-}
-
-main p {
-    font-size: 18px;
-    color: #E5E7EB;
-}
-
-/* Header settings*/
-
-header #logo {
-    font-size: 24px;
-    color: #F9FAF8;
-}
-
-header {
+:root {
+    --blue: #3882f6;
+    --dark: #1f2937;
+    --gray: #e5e7eb;
+    --white: #f9faf8;
+    --active: hsl(217, 91%, 35%);
+    --btn-hover: hsl(217, 91%, 45%);
+    --odin: #cc9543;
+  }
+  
+  *,
+  *::after,
+  *::before {
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-nav ul {
-    display: flex;
-    gap: 8px;
-    list-style: none;
-}
-
-nav a {
+    flex-direction: column;
+  }
+  
+  a {
+    color: var(--white);
     text-decoration: none;
-    color: #F9FAF8;
-}
+  }
+  
+  button {
+    border: 0;
+  }
+  
+  figure,
+  h1,
+  h2 {
+    margin: 0;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .btn {
+    width: 100%;
+    background-color: var(--blue);
+    color: var(--white);
+    font-size: 1.125rem;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: var(--btn-hover);
+  }
+  
+  .btn:active {
+    background-color: var(--white);
+    color: var(--blue);
+    opacity: 1;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .container {
+    padding: 0 10%;
+  }
+  
+  .header,
+  .footer {
+    color: var(--white);
+    background-color: var(--dark);
+  }
+  
+  /* Header Nav */
+  .header-nav {
+    min-height: 90px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .header-nav-logo {
+    font-size: 1.5rem;
+  }
+  
+  .header-nav-logo::before {
+    content: url(images/favicon.ico);
+    padding-right: 10px;
+  }
+  
+  .header-nav nav ul {
+    gap: 10px;
+  }
+  
+  .header-nav nav ul li,
+  .header-nav nav ul li a {
+    font-size: 1.125rem;
+    padding: 10px;
+    transition: ease-in-out 0.3s;
+  }
+  
+  .header-nav nav ul li a:hover {
+    background-color: var(--blue);
+  }
+  
+  .header-nav nav ul li a:active {
+    background-color: var(--active);
+  }
+  
+  /* Header Hero */
+  .header-hero {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .header-hero-title {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .header-hero-title h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: normal;
+    color: var(--white);
+  }
+  
+  .header-hero-title p {
+    color: var(--gray);
+    font-size: 1.125rem;
+    text-align: justify;
+    margin-bottom: 10px;
+  }
+  
+  .header-hero-title .btn {
+    margin-bottom: 20px;
+  }
+  
+  .header-hero-image {
+    max-width: 100%;
+  }
+  
+  .header-hero-image img {
+    max-width: 100%;
+  }
+  
+  /* Main */
+  .main-info {
+    background-color: var(--white);
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .main-info h2 {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .main-info-cards {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .main-info-cards .card {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .main-info-cards .card .card-image {
+    height: 250px;
+    width: 250px;
+    border: 4px solid var(--blue);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .card > figcaption {
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--dark);
+  }
+  
+  .card-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  /* Quotation */
+  .main-quotation {
+    background-color: var(--gray);
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .main-quotation p {
+    font-size: 1.5rem;
+    color: var(--dark);
+  }
+  
+  .main-quotation p + p {
+    text-align: right;
+  }
+  
+  .main-quotation p em q {
+    font-weight: 300;
+  }
+  
+  /* Action Card */
+  .main-action {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .main-action-card {
+    background-color: var(--blue);
+    color: var(--white);
+    text-align: center;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 30px;
+    flex-direction: column;
+  }
+  
+  .left h2,
+  .left p {
+    padding-bottom: 10px;
+  }
+  
+  .left p {
+    color: var(--gray);
+  }
+  
+  .right .btn {
+    border: 2px solid var(--white);
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .footer a {
+    color: var(--odin);
+  }
+  
+  .fa-github {
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+  }
+  
+  .fa-github:hover {
+    transform: scale(1.6) rotate(360deg);
+  }
+  
+  /* Laptop */
+  @media screen and (min-width: 1024px) {
+    .btn {
+      width: 130px;
+    }
+  
+    .header-nav {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .header-hero {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .header-hero-title {
+      width: 40%;
+      align-items: flex-start;
+      text-align: left;
+    }
+  
+    .header-hero-title h1 {
+      font-size: 3rem;
+    }
+  
+    .header-hero-title p {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+  
+    .header-hero-image {
+      max-width: 50%;
+    }
+  
+    /* Quote */
+    .main-quotation p {
+      font-size: 2.25rem;
+      padding: 0 100px;
+    }
+  
+    /* Action Card */
+    .main-action-card {
+      text-align: left;
+      padding: 40px 150px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .left h2,
+    .left p {
+      padding: 0;
+    }
+  }
