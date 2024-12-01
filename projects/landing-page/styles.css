@@ -5,3 +5,45 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+/*General Settings */
+
+/*Hero Section*/
+header, main, footer {
+    background-color: #1F2937;
+}
+
+main h1 {
+    font-size: 48px;
+    color: #F9FAF8;
+    font-weight: 900;
+}
+
+main p {
+    font-size: 18px;
+    color: #E5E7EB;
+}
+
+/* Header settings*/
+
+header #logo {
+    font-size: 24px;
+    color: #F9FAF8;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #F9FAF8;
+}
