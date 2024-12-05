@@ -51,7 +51,19 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
     humanChoice = getHumanChoice();
     computerChoice = getComputerChoice();
-    console.log(humanChoice, computerChoice);
+
+    if (humanChoice === computerChoice) {
+        console.log(`you choosed ${humanChoice}, the IA choosed ${computerChoice}. It's a tie.`)
+    } else if (humanChoice === "scissors" && computerChoice === "rock") {
+        console.log(`you choosed ${humanChoice}, the IA choosed ${computerChoice}. You lose.`)
+    } else if (humanChoice === "rock" && computerChoice === "paper") {
+        console.log(`you choosed ${humanChoice}, the IA choosed ${computerChoice}. You lose.`)
+    } else if (humanChoice === "paper" && computerChoice === "scissors") {
+        console.log(`you choosed ${humanChoice}, the IA choosed ${computerChoice}. You lose.`)
+    } else {
+        console.log(`you choosed ${humanChoice}, the IA choosed ${computerChoice}. You win!`)
+    }
+
 }
 
 playRound();
