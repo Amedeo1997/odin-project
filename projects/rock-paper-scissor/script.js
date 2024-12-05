@@ -27,3 +27,15 @@ create a function named playGame
 move the playRound function and score var so that they're declared inside of the new playGame function
 play 5 rounds by calling playRound 5 times.
 */
+
+function getComputerChoice() {
+    let choice = Math.random() * 3
+    if (choice <= 1) {
+        choice = "rock"
+    } else if (choice > 1 && choice <= 2 ) {
+        choice = "paper";
+    } else 
+        choice = "scissors";
+
+    console.log(choice);
+}
