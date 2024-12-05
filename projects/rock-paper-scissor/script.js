@@ -28,6 +28,9 @@ move the playRound function and score var so that they're declared inside of the
 play 5 rounds by calling playRound 5 times.
 */
 
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     let choice = Math.random() * 3
     if (choice <= 1) {
