@@ -1,69 +1,69 @@
-/*
-Pseudo code 
-Create a function getComputerChoice
-getComputerChoice will randomly return one of the following string : rock, paper, scissors.
-console log to see if it's working
+function playGame() {
+    // Initialize scores
+    let humanScore = 0;
+    let computerScore = 0;
 
-create a function named getHumanChoice
-getHumanChoice will return one of the valid choices depending on what the user inputs (use prompt).
-test with consolelog
-
-declare the player score variables
-create two variables named humanScore and computerScore in the global scope
-initialize the variables with the value of 0
-
-write the logic to play a single round
-create a new function named playRound
-define two parameters for playRound : humanChoice and computerChoice. use them to take the human
-and computer choices as arguments.
-make humanChoice case-insensitive ex: rock ROCK roCk ROCK should work
-write the chode for playRound function to console.log a string value representing the round winner,such as:"You Lose! Paper beats Rock"
-Increment the humanScore or computerScore variables on the round winner.
-
-write the logic to play the entire game.
-the game will play 5 rounds. 
-write a function named playZGame that calls playRound to play 5 rounds. keep tracks of the scores and delcares a winner at the end.
-create a function named playGame
-move the playRound function and score var so that they're declared inside of the new playGame function
-play 5 rounds by calling playRound 5 times.
-*/
-
-let humanScore = 0;
-let computerScore = 0;
-
-function getComputerChoice() {
-    let choice = Math.random() * 3
-    if (choice <= 1) {
-        choice = "rock"
-    } else if (choice > 1 && choice <= 2 ) {
-        choice = "paper";
-    } else 
-        choice = "scissors";
-
-    return choice;
-}
-
-function getHumanChoice() {
-    let playerChoice = prompt("Please enter one of the followings: rock, paper, scissors");
-    return playerChoice.toLowerCase();
-}
-
-function playRound(humanChoice, computerChoice) {
-    humanChoice = getHumanChoice();
-    computerChoice = getComputerChoice();
-
-    if (humanChoice === computerChoice) {
-        console.log(`you choosed ${humanChoice}, the IA choosed ${computerChoice}. It's a tie.`)
-    } else if (humanChoice === "scissors" && computerChoice === "rock") {
-        console.log(`you choosed ${humanChoice}, the IA choosed ${computerChoice}. You lose.`)
-    } else if (humanChoice === "rock" && computerChoice === "paper") {
-        console.log(`you choosed ${humanChoice}, the IA choosed ${computerChoice}. You lose.`)
-    } else if (humanChoice === "paper" && computerChoice === "scissors") {
-        console.log(`you choosed ${humanChoice}, the IA choosed ${computerChoice}. You lose.`)
-    } else {
-        console.log(`you choosed ${humanChoice}, the IA choosed ${computerChoice}. You win!`)
+    // Helper function to get computer choice
+    function getComputerChoice() {
+        let choice = Math.random() * 3;
+        if (choice <= 1) {
+            choice = "rock";
+        } else if (choice > 1 && choice <= 2) {
+            choice = "paper";
+        } else {
+            choice = "scissors";
+        }
+        return choice;
     }
 
+    // Helper function to get human choice
+    function getHumanChoice() {
+        let playerChoice = prompt("Please enter one of the following: rock, paper, scissors");
+        return playerChoice.toLowerCase();
+    }
+
+    // Function to play a single round
+    function playRound() {
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
+
+        if (humanChoice === computerChoice) {
+            console.log(`You chose ${humanChoice}, the computer chose ${computerChoice}. It's a tie.`);
+        } else if (
+            (humanChoice === "scissors" && computerChoice === "rock") ||
+            (humanChoice === "rock" && computerChoice === "paper") ||
+            (humanChoice === "paper" && computerChoice === "scissors")
+        ) {
+            console.log(`You chose ${humanChoice}, the computer chose ${computerChoice}. You lose this round.`);
+            computerScore++;
+        } else if (
+            (humanChoice === "rock" && computerChoice === "scissors") ||
+            (humanChoice === "paper" && computerChoice === "rock") ||
+            (humanChoice === "scissors" && computerChoice === "paper")
+        ) {
+            console.log(`You chose ${humanChoice}, the computer chose ${computerChoice}. You win this round!`);
+            humanScore++;
+        } else {
+            console.log(`Invalid input: ${humanChoice}. Please choose rock, paper, or scissors.`);
+        }
+    }
+
+    // Play 5 rounds
+    for (let round = 1; round <= 5; round++) {
+        console.log(`Round ${round}:`);
+        playRound();
+        console.log(`Score after Round ${round} - Human: ${humanScore}, Computer: ${computerScore}\n`);
+    }
+
+    // Declare the winner
+    if (humanScore > computerScore) {
+        console.log(`Congratulations! You win the game with a score of ${humanScore} to ${computerScore}.`);
+    } else if (computerScore > humanScore) {
+        console.log(`The computer wins the game with a score of ${computerScore} to ${humanScore}. Better luck next time!`);
+    } else {
+        console.log(`It's a tie game! Both you and the computer scored ${humanScore}.`);
+    }
 }
 
-playRound();
+// Start the game
+playGame();
