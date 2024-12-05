@@ -40,10 +40,18 @@ function getComputerChoice() {
     } else 
         choice = "scissors";
 
-    console.log(choice);
+    return choice;
 }
 
 function getHumanChoice() {
-    let humanChoice = prompt("Please enter one of the followings: rock, paper, scissors");
-    console.log(humanChoice);
+    let playerChoice = prompt("Please enter one of the followings: rock, paper, scissors");
+    return playerChoice;
 }
+
+function playRound(humanChoice, computerChoice) {
+    humanChoice = getHumanChoice();
+    computerChoice = getComputerChoice();
+    console.log(humanChoice, computerChoice);
+}
+
+playRound();
