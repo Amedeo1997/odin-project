@@ -39,3 +39,8 @@ function getComputerChoice() {
 
     console.log(choice);
 }
+
+function getHumanChoice() {
+    let humanChoice = prompt("Please enter one of the followings: rock, paper, scissors");
+    console.log(humanChoice);
+}
